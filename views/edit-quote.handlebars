@@ -6,7 +6,7 @@
   <form class="edit-quote-form">
     <div>
       <input name="quote-text" type="text" value="{{quote.text}}" />
-      <span>({{format_url quote.author}})</span>
+      <span>({{quote.author}})</span>
     </div>
     <div>
       {{quote.liked_count}} {{format_plural "point" quote.liked_count}} by you on {{format_date quote.created_at}}

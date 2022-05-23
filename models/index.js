@@ -17,7 +17,6 @@ Quote.belongsTo(User, {
 User.belongsToMany(Quote, {
   through: Liked,
   as: "liked_quotes",
-
   foreignKey: "user_id",
   onDelete: "SET NULL",
 });

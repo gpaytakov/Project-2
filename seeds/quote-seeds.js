@@ -54,52 +54,52 @@ const quotedata = [
   {
     text: "Peace comes from within. Do not seek it without.",
     author: "Buddha",
-    user_id: 11,
+    user_id: 1,
   },
   {
     text: "What you give is what you get.",
     author: "Byron Pulsifer",
-    user_id: 12,
+    user_id: 2,
   },
   {
     text: "We can only learn to love by loving.",
     author: "Iris Murdoch",
-    user_id: 13,
+    user_id: 3,
   },
   {
     text: "Life is change. Growth is optional. Choose wisely.",
     author: "Karen Clark",
-    user_id: 14,
+    user_id: 4,
   },
   {
     text: "You'll see it when you believe it.",
     author: "Wayne Dyer",
-    user_id: 15,
+    user_id: 5,
   },
   {
     text: "Today is the tomorrow we worried about yesterday.",
     author: null,
-    user_id: 16,
+    user_id: 6,
   },
   {
     text: "It's easier to see the mistakes on someone else's paper.",
     author: null,
-    user_id: 17,
+    user_id: 7,
   },
   {
     text: "Every man dies. Not every man really lives.",
     author: null,
-    user_id: 18,
+    user_id: 8,
   },
   {
     text: "To lead people walk behind them.",
     author: "Lao Tzu",
-    user_id: 19,
+    user_id: 9,
   },
   {
     text: "Having nothing, nothing can he lose.",
     author: "William Shakespeare",
-    user_id: 20,
+    user_id: 10,
   },
 ];
 

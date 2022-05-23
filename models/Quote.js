@@ -59,7 +59,7 @@ Quote.init(
     },
     author: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         isURL: true,
       },
