@@ -2,7 +2,7 @@ async function newFormHandler(event) {
   event.preventDefault();
 
   const text = document.querySelector('input[name="quote-text"]').value;
-  const author = document.querySelector('input[name="quote-url"]').value;
+  const author = document.querySelector('input[name="quote-author"]').value;
 
   const response = await fetch(`/api/quotes`, {
     method: "POST",
