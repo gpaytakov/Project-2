@@ -5,11 +5,11 @@
   </h2>
   <form class="edit-quote-form">
     <div>
-      <input name="quote-title" type="text" value="{{quote.title}}" />
-      <span>({{format_url quote.quote_url}})</span>
+      <input name="quote-text" type="text" value="{{quote.text}}" />
+      <span>({{format_url quote.author}})</span>
     </div>
     <div>
-      {{quote.vote_count}} {{format_plural "point" quote.vote_count}} by you on {{format_date quote.created_at}}
+      {{quote.liked_count}} {{format_plural "point" quote.liked_count}} by you on {{format_date quote.created_at}}
       |
       <a href="/quote/{{quote.id}}">{{quote.comments.length}} {{format_plural "comment" quote.comments.length}}</a>
     </div>

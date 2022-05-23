@@ -1,11 +1,11 @@
 {
   "name": "just-tech-news",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "seeds": "node seeds/index.js"
+    "seeds": "node seeds/index.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,6 @@
     "handlebars": "^4.7.3",
     "mysql2": "^2.3.3",
     "sequelize": "^6.19.2"
-  }
+  },
+  "description": ""
 }

@@ -1,7 +1,7 @@
 // import all models
 const Quote = require("./Quote");
 const User = require("./User");
-const Vote = require("./Vote");
+const Liked = require("./Liked");
 const Comment = require("./Comment");
 
 // create associations
@@ -15,35 +15,35 @@ Quote.belongsTo(User, {
 });
 
 User.belongsToMany(Quote, {
-  through: Vote,
-  as: "voted_quotes",
+  through: Liked,
+  as: "liked_quotes",
 
   foreignKey: "user_id",
   onDelete: "SET NULL",
 });
 
 Quote.belongsToMany(User, {
-  through: Vote,
-  as: "voted_quotes",
+  through: Liked,
+  as: "liked_quotes",
   foreignKey: "quote_id",
   onDelete: "SET NULL",
 });
 
-Vote.belongsTo(User, {
+Liked.belongsTo(User, {
   foreignKey: "user_id",
   onDelete: "SET NULL",
 });
 
-Vote.belongsTo(Quote, {
+Liked.belongsTo(Quote, {
   foreignKey: "quote_id",
   onDelete: "SET NULL",
 });
 
-User.hasMany(Vote, {
+User.hasMany(Liked, {
   foreignKey: "user_id",
 });
 
-Quote.hasMany(Vote, {
+Quote.hasMany(Liked, {
   foreignKey: "quote_id",
 });
 
@@ -66,4 +66,4 @@ Quote.hasMany(Comment, {
   foreignKey: "quote_id",
 });
 
-module.exports = { User, Quote, Vote, Comment };
+module.exports = { User, Quote, Liked, Comment };

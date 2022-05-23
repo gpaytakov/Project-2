@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-const { Quote, User, Comment, Vote } = require("../../models");
+const { Quote, User, Comment, Liked } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 // get all users
@@ -9,14 +9,14 @@ router.get("/", (req, res) => {
   Quote.findAll({
     attributes: [
       "id",
-      "quote_url",
-      "title",
+      "author",
+      "text",
       "created_at",
       [
         sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE quote.id = vote.quote_id)"
+          "(SELECT COUNT(*) FROM liked WHERE quote.id = liked.quote_id)"
         ),
-        "vote_count",
+        "liked_count",
       ],
     ],
     include: [
@@ -48,14 +48,14 @@ router.get("/:id", (req, res) => {
     },
     attributes: [
       "id",
-      "quote_url",
-      "title",
+      "author",
+      "text",
       "created_at",
       [
         sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE quote.id = vote.quote_id)"
+          "(SELECT COUNT(*) FROM liked WHERE quote.id = liked.quote_id)"
         ),
-        "vote_count",
+        "liked_count",
       ],
     ],
     include: [
@@ -87,10 +87,10 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', quote_url: 'https://taskmaster.com/press', user_id: 1}
+  // expects {text: 'Taskmaster goes public!', author: 'https://taskmaster.com/press', user_id: 1}
   Quote.create({
-    title: req.body.title,
-    quote_url: req.body.quote_url,
+    text: req.body.text,
+    author: req.body.author,
     user_id: req.session.user_id,
   })
     .then((dbQuoteData) => res.json(dbQuoteData))
@@ -100,13 +100,13 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
-router.put("/upvote", withAuth, (req, res) => {
+router.put("/upliked", withAuth, (req, res) => {
   // custom static method created in models/Quote.js
-  Quote.upvote(
+  Quote.upliked(
     { ...req.body, user_id: req.session.user_id },
-    { Vote, Comment, User }
+    { Liked, Comment, User }
   )
-    .then((updatedVoteData) => res.json(updatedVoteData))
+    .then((updatedLikedData) => res.json(updatedLikedData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -116,7 +116,7 @@ router.put("/upvote", withAuth, (req, res) => {
 router.put("/:id", withAuth, (req, res) => {
   Quote.update(
     {
-      title: req.body.title,
+      text: req.body.text,
     },
     {
       where: {

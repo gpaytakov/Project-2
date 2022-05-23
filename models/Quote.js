@@ -2,8 +2,8 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 // create our Quote model
 class Quote extends Model {
-  static upvote(body, models) {
-    return models.Vote.create({
+  static upliked(body, models) {
+    return models.Liked.create({
       user_id: body.user_id,
       quote_id: body.quote_id,
     }).then(() => {
@@ -13,14 +13,14 @@ class Quote extends Model {
         },
         attributes: [
           "id",
-          "quote_url",
-          "title",
+          "author",
+          "text",
           "created_at",
           [
             sequelize.literal(
-              "(SELECT COUNT(*) FROM vote WHERE quote.id = vote.quote_id)"
+              "(SELECT COUNT(*) FROM liked WHERE quote.id = liked.quote_id)"
             ),
-            "vote_count",
+            "liked_count",
           ],
         ],
         include: [
@@ -53,11 +53,11 @@ Quote.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    text: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    quote_url: {
+    author: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {

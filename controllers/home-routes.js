@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Quote, User, Comment, Vote } = require("../models");
+const { Quote, User, Comment, Liked } = require("../models");
 
 // get all quotes for homepage
 router.get("/", (req, res) => {
@@ -8,14 +8,14 @@ router.get("/", (req, res) => {
   Quote.findAll({
     attributes: [
       "id",
-      "quote_url",
-      "title",
+      "author",
+      "text",
       "created_at",
       [
         sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE quote.id = vote.quote_id)"
+          "(SELECT COUNT(*) FROM liked WHERE quote.id = liked.quote_id)"
         ),
-        "vote_count",
+        "liked_count",
       ],
     ],
     include: [
@@ -55,14 +55,14 @@ router.get("/quote/:id", (req, res) => {
     },
     attributes: [
       "id",
-      "quote_url",
-      "title",
+      "author",
+      "text",
       "created_at",
       [
         sequelize.literal(
-          "(SELECT COUNT(*) FROM vote WHERE quote.id = vote.quote_id)"
+          "(SELECT COUNT(*) FROM liked WHERE quote.id = liked.quote_id)"
         ),
-        "vote_count",
+        "liked_count",
       ],
     ],
     include: [

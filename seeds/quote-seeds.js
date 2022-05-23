@@ -2,111 +2,104 @@ const { Quote } = require("../models");
 
 const quotedata = [
   {
-    title: "Donec posuere metus vitae ipsum.",
-    quote_url: "https://buzzfeed.com/in/imperdiet/et/commodo/vulputate.png",
-    user_id: 10,
-  },
-  {
-    title: "Morbi non quam nec dui luctus rutrum.",
-    quote_url: "https://nasa.gov/donec.json",
-    user_id: 8,
-  },
-  {
-    title:
-      "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue.",
-    quote_url:
-      "https://europa.eu/parturient/montes/nascetur/ridiculus/mus/etiam/vel.aspx",
+    text: "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    author: "Thomas Edison",
     user_id: 1,
   },
   {
-    title: "Nunc purus.",
-    quote_url: "http://desdev.cn/enim/blandit/mi.jpg",
+    text: "You can observe a lot just by watching.",
+    author: "Yogi Berra",
+    user_id: 2,
+  },
+  {
+    text: "A house divided against itself cannot stand.",
+    author: "Abraham Lincoln",
+    user_id: 3,
+  },
+  {
+    text: "Difficulties increase the nearer we get to the goal.",
+    author: "Johann Wolfgang von Goethe",
     user_id: 4,
   },
   {
-    title: "Pellentesque eget nunc.",
-    quote_url: "http://google.ca/nam/nulla/integer.aspx",
-    user_id: 7,
-  },
-  {
-    title: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-    quote_url: "https://stanford.edu/consequat.png",
-    user_id: 4,
-  },
-  {
-    title: "In hac habitasse platea dictumst.",
-    quote_url: "http://edublogs.org/non/ligula/pellentesque.js",
-    user_id: 1,
-  },
-  {
-    title: "Morbi non quam nec dui luctus rutrum.",
-    quote_url: "http://ucla.edu/consequat/nulla.html",
-    user_id: 1,
-  },
-  {
-    title: "Duis ac nibh.",
-    quote_url: "http://theguardian.com/dui/vel/nisl/duis/ac/nibh.aspx",
-    user_id: 9,
-  },
-  {
-    title: "Curabitur at ipsum ac tellus semper interdum.",
-    quote_url: "https://reverbnation.com/ligula/sit.jpg",
+    text: "Fate is in your hands and no one elses",
+    author: "Byron Pulsifer",
     user_id: 5,
   },
   {
-    title: "In hac habitasse platea dictumst.",
-    quote_url: "http://china.com.cn/lectus/vestibulum.json",
-    user_id: 3,
+    text: "Be the chief but never the lord.",
+    author: "Lao Tzu",
+    user_id: 6,
   },
   {
-    title: "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
-    quote_url:
-      "http://networksolutions.com/nam/ultrices/libero/non/mattis/pulvinar.json",
-    user_id: 10,
+    text: "Nothing happens unless first we dream.",
+    author: "Carl Sandburg",
+    user_id: 7,
   },
   {
-    title: "Donec dapibus.",
-    quote_url: "https://instagram.com/ac/neque/duis/bibendum/morbi/non.xml",
+    text: "Well begun is half done.",
+    author: "Aristotle",
     user_id: 8,
   },
   {
-    title: "Nulla tellus.",
-    quote_url: "https://lycos.com/natoque/penatibus/et.html",
-    user_id: 3,
+    text: "Life is a learning experience, only if you learn.",
+    author: "Yogi Berra",
+    user_id: 9,
   },
   {
-    title:
-      "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
-    quote_url: "https://gmpg.org/lorem.jpg",
-    user_id: 3,
+    text: "Self-complacency is fatal to progress.",
+    author: "Margaret Sangster",
+    user_id: 10,
   },
   {
-    title:
-      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
-    quote_url: "https://paginegialle.it/mattis/egestas.jsp",
-    user_id: 7,
+    text: "Peace comes from within. Do not seek it without.",
+    author: "Buddha",
+    user_id: 11,
   },
   {
-    title: "In hac habitasse platea dictumst.",
-    quote_url: "http://wikia.com/turpis/eget.jpg",
-    user_id: 6,
+    text: "What you give is what you get.",
+    author: "Byron Pulsifer",
+    user_id: 12,
   },
   {
-    title: "Etiam justo.",
-    quote_url: "https://shareasale.com/quis.json",
-    user_id: 4,
+    text: "We can only learn to love by loving.",
+    author: "Iris Murdoch",
+    user_id: 13,
   },
   {
-    title: "Nulla ut erat id mauris vulputate elementum.",
-    quote_url:
-      "http://java.com/diam/neque/vestibulum/eget/vulputate/ut/ultrices.png",
-    user_id: 6,
+    text: "Life is change. Growth is optional. Choose wisely.",
+    author: "Karen Clark",
+    user_id: 14,
   },
   {
-    title:
-      "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
-    quote_url: "https://java.com/at/nibh/in.png",
-    user_id: 7,
+    text: "You'll see it when you believe it.",
+    author: "Wayne Dyer",
+    user_id: 15,
+  },
+  {
+    text: "Today is the tomorrow we worried about yesterday.",
+    author: null,
+    user_id: 16,
+  },
+  {
+    text: "It's easier to see the mistakes on someone else's paper.",
+    author: null,
+    user_id: 17,
+  },
+  {
+    text: "Every man dies. Not every man really lives.",
+    author: null,
+    user_id: 18,
+  },
+  {
+    text: "To lead people walk behind them.",
+    author: "Lao Tzu",
+    user_id: 19,
+  },
+  {
+    text: "Having nothing, nothing can he lose.",
+    author: "William Shakespeare",
+    user_id: 20,
   },
 ];
 

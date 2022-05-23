@@ -1,10 +1,10 @@
-async function upvoteClickHandler(event) {
+async function uplikedClickHandler(event) {
   event.preventDefault();
 
   const id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
-  const response = await fetch("/api/quotes/upvote", {
+  const response = await fetch("/api/quotes/upliked", {
     method: "PUT",
     body: JSON.stringify({
       quote_id: id,
@@ -22,5 +22,5 @@ async function upvoteClickHandler(event) {
 }
 
 document
-  .querySelector(".upvote-btn")
-  .addEventListener("click", upvoteClickHandler);
+  .querySelector(".upliked-btn")
+  .addEventListener("click", uplikedClickHandler);

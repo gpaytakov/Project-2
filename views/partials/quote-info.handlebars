@@ -1,11 +1,11 @@
 <article class="quote">
-  <div class="title">
-    <a href="{{quote_url}}" target="_blank">{{title}}</a>
-    <span>({{format_url quote_url}})</span>
+  <div class="text">
+    <a href="{{author}}" target="_blank">{{text}}</a>
+    <span>({{format_url author}})</span>
   </div>
   <div class="meta">
-    {{vote_count}}
-    {{format_plural "point" vote_count}}
+    {{liked_count}}
+    {{format_plural "point" liked_count}}
     by
     {{user.username}}
     on
