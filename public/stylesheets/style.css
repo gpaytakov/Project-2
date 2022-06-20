@@ -2,7 +2,10 @@
   box-sizing: border-box;
 }
 
-body,
+body {
+  background-color: #ebdf34;
+}
+
 html {
   height: 100%;
   padding: 0;
@@ -13,13 +16,20 @@ html {
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: #a35122;
+  font-weight: bold;
+  transition: color 0.1s;
+}
+
+header a {
+  text-decoration: none;
+  color: #fff5eb;
   font-weight: bold;
   transition: color 0.1s;
 }
 
 a:hover {
-  color: #3486eb;
+  color: #eb6e34;
 }
 
 button {
@@ -83,10 +93,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 1%;
+  background-color: #333;
 }
 
 header h1 {
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 main {
@@ -128,7 +139,7 @@ main {
 .quote .text span {
   font-style: italic;
   font-size: 90%;
-  color: #7d7d7d;
+  color: #7c26e5;
 }
 
 .edit-link {
@@ -173,9 +184,10 @@ main {
 }
 
 footer {
-  border-top: 1px solid #ccc;
   display: flex;
   justify-content: center;
   padding: 1%;
   font-size: 110%;
+  background-color: #3486eb;
+  color:#fff5eb
 }
