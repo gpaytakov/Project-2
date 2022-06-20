@@ -27,8 +27,8 @@ Guvanchmyrat Paytakov: (https://wwww.github.com/gpaytakov)
 ```
 
 ## Links:
-Deployed site: https://jrj-sys.github.io/PokeHunt/      
-GitHub URL: https://github.com/jrj-sys/PokeHunt
+Deployed site:   
+GitHub URL: https://github.com/gpaytakov/Project-2
 
 # Note:
 ```md
